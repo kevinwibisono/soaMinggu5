@@ -42,5 +42,5 @@ app.get("/", function(req, res){
     //res.render("index");
 });
 
-app.listen(process.env.DB_PORT);
-console.log("listening port 3000");
+app.listen(process.env.PORT);
+console.log(`listening port ${process.env.PORT}`);
