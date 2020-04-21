@@ -38,7 +38,8 @@ app.post("/api/upload", upload.single("foto"), function(req, res){
 });
 
 app.get("/", function(req, res){
-    res.render("index");
+    res.send("Berhasil ndak ya?")
+    //res.render("index");
 });
 
 app.listen(process.env.DB_PORT);
