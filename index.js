@@ -4,6 +4,7 @@ const dosen = require("./routes/dosen");
 const matkul = require("./routes/matkul")
 const multer = require("multer");
 const app = express();
+var originalname = "";
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
 app.set("view engine", "ejs");
@@ -23,6 +24,7 @@ let storage = multer.diskStorage({
     },
     filename: function(req, file, cb){
         console.log(file);
+        originalname = file.originalname;
         cb(null, file.originalname)
     }
 });
@@ -34,7 +36,7 @@ upload = multer({storage: storage});
 //foto adalah nama parameter
 app.post("/api/upload", upload.single("foto"), function(req, res){
     console.log(req.body.nama);
-    res.send("Sukses upload");
+    res.render("index", {foto: originalname});
 });
 
 app.get("/", function(req, res){
