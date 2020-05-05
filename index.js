@@ -41,8 +41,9 @@ app.post("/api/upload", upload.single("foto"), function(req, res){
 
 app.get("/", function(req, res){
     //res.send("Berhasil ndak ya?")
-    res.render("index");
+    res.render("index", {originalname: null});
 });
 
-app.listen(process.env.PORT);
+//app.listen(process.env.PORT);
+app.listen(3000);
 console.log(`listening port ${process.env.PORT}`);
