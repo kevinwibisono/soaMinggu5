@@ -36,7 +36,7 @@ upload = multer({storage: storage});
 //foto adalah nama parameter
 app.post("/api/upload", upload.single("foto"), function(req, res){
     console.log(req.body.nama);
-    res.render("index", {foto: originalname});
+    res.render("index", {originalname: originalname});
 });
 
 app.get("/", function(req, res){
