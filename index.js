@@ -44,6 +44,5 @@ app.get("/", function(req, res){
     res.render("index", {originalname: null});
 });
 
-//app.listen(process.env.PORT);
-app.listen(3000);
+app.listen(process.env.PORT);
 console.log(`listening port ${process.env.PORT}`);
