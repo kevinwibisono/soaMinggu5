@@ -6,10 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <% if(originalname != null){%>
-        Hasil foto:<br>
-        <img src='<%= "https://soa-minggu5.herokuapp.com/"+originalname%>'><br>
-    <% } %>
+    
     <form action="https://soa-minggu5.herokuapp.com/api/upload" method="post" enctype="multipart/form-data">
         Upload foto: <input type="file" name="foto" id=""><br>
         <input type="submit" value="Upload">
