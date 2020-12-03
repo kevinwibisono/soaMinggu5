@@ -45,8 +45,8 @@ app.get("/", function(req, res){
 });
 
 app.post("/afterIpaymu", function(req, res){
-    res.send("Params: "+req.query);
-    res.send("Body: "+req.body);
+    res.send("SID: "+req.query.sid);
+	res.send("Status: "+req.query.status);
 });
 
 app.listen(process.env.PORT);
