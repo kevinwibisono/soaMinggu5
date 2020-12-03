@@ -44,5 +44,10 @@ app.get("/", function(req, res){
     res.render("index", {originalname: null});
 });
 
+app.post("/afterIpaymu", function(req, res){
+    res.send("Params: "+req.query);
+    res.send("Body: "+req.body);
+});
+
 app.listen(process.env.PORT);
 console.log(`listening port ${process.env.PORT}`);
